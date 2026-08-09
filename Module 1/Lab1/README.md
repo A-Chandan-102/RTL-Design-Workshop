@@ -15,6 +15,7 @@ Installed necessary tools using:
 ```bash
 sudo apt install iverilog
 sudo apt install gtkwave
+sudo apt install neovim-qt
 ```
 Also explored various designs in present in `verilog_files`
 ### Learning Outcomes
