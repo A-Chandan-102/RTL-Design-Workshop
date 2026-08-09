@@ -1,6 +1,30 @@
 # RTL Design Workshop
 Welcome to my RTL Design Workshop repository, where I will document my journey of learning RTL coding, simulation, testbench development, and waveform-based debugging of digital circuits. All the data is ordered according to modules learnt
 
+## Tools Used
+
+- **Verilog** – Hardware Description Language used to write RTL designs and testbenches.
+- **Icarus Verilog** – Used to compile and simulate Verilog RTL designs.
+- **GTKWave** – Used to view and analyze simulation waveforms from VCD files.
+- **GVim** – Used to edit and inspect Verilog source files and standard-cell library files.
+- **Yosys** – Used for RTL synthesis, optimization, technology mapping, and netlist generation.
+- **Sky130 Standard Cell Library** – Used for technology mapping and standard-cell characterization.
+- **Graphviz / Dot Viewer** – Used to visualize synthesized gate-level netlists.
+- **Git & GitHub** – Used for version control and documenting the learning progress.
+
+## Main Objectives
+
+- Understand the fundamentals of **RTL design and Verilog**.
+- Learn to create and use **testbenches** for RTL verification.
+- Simulate designs using **Icarus Verilog** and analyze waveforms using **GTKWave**.
+- Understand the process of **RTL synthesis** using Yosys.
+- Explore **Sky130 standard-cell libraries**, PVT conditions, cell flavours, and characteristics.
+- Understand **hierarchical and flat synthesis** and their effect on netlists.
+- Study **flip-flop synthesis**, including synchronous and asynchronous reset/set implementations.
+- Understand how synthesis tools perform **RTL optimization** to reduce hardware complexity.
+- Analyze synthesized **gate-level netlists** using Graphviz/Dot Viewer.
+- Develop a complete understanding of the **RTL → Simulation → Synthesis → Netlist Analysis** workflow.
+
 ## 📂 Repository Structure
 
 - 📁 **[Module 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%201)**
