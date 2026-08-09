@@ -1,0 +1,83 @@
+# Lab 6 - Why Flip-Flops and Flop Coding Styles
+
+## Why Do We Use Flip-Flops?
+
+Flip-flops are sequential logic elements used to store one bit of data. They capture data at a specific clock edge and hold the stored value until the next active clock edge.
+
+Flip-flops are used to:
+- Store the state of a digital circuit.
+- Synchronize data with the clock.
+- Break long combinational paths into smaller timing stages.
+- Build registers, counters, state machines, and pipelines.
+
+## What is a Glitch?
+
+A **glitch** is a short, unwanted change in the output of a combinational circuit caused by different propagation delays through different logic paths.
+
+For example, when multiple inputs change at nearly the same time, they may not reach the gates simultaneously. This can cause the output to temporarily change to an incorrect value before settling to its expected value.
+
+Flip-flops help prevent these temporary glitches from becoming stored system states because they sample the data only at a defined clock edge.
+
+## Asynchronous Reset
+
+An asynchronous reset operates independently of the clock. When the reset is asserted, the flip-flop is immediately forced to its reset state.
+
+The coding style used is:
+
+    always @(posedge clk or posedge async_reset)
+    begin
+        if (async_reset)
+            q <= 1'b0;
+        else
+            q <= d;
+    end
+
+Here, both the clock and reset are present in the sensitivity list. Therefore, the reset can change the output without waiting for a clock edge.
+
+## Synchronous Reset
+
+A synchronous reset operates only with respect to the clock. The reset condition is checked at the active clock edge.
+
+The coding style used is:
+
+    always @(posedge clk)
+    begin
+        if (sync_reset)
+            q <= 1'b0;
+        else
+            q <= d;
+    end
+
+Here, only the clock is present in the sensitivity list. The reset is checked when the clock edge occurs.
+
+## Asynchronous vs Synchronous Reset
+
+| Feature | Asynchronous Reset | Synchronous Reset |
+|---|---|---|
+| Clock dependency | Independent of clock | Depends on clock |
+| Reset response | Immediate | At clock edge |
+| Sensitivity list | Clock + reset | Clock only |
+| Main advantage | Immediate initialization | Controlled timing |
+
+## Mixed Synchronous and Asynchronous Reset
+
+A combination of both techniques can also be used. The reset can be asserted asynchronously so that the circuit enters a known state immediately, while its release can be synchronized with the clock.
+
+This combines immediate reset with controlled reset release.
+
+## Key Takeaway
+
+Flip-flops provide storage and synchronization in digital systems. The Verilog coding style determines the type of flip-flop and reset behavior inferred during synthesis.
+
+- `posedge clk` → clocked operation.
+- `posedge clk or posedge reset` → asynchronous reset.
+- Reset checked inside a clocked block → synchronous reset.
+
+## Learning Outcomes
+
+- Understood why flip-flops are used in synchronous digital circuits.
+- Understood what glitches are and how propagation delays can cause them.
+- Learned how flip-flops help prevent glitches from becoming stored states.
+- Differentiated between synchronous and asynchronous reset.
+- Understood the Verilog coding styles for different reset types.
+- Learned how RTL coding style affects the flip-flop inferred during synthesis.
