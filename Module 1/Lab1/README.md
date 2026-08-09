@@ -10,6 +10,8 @@ Cloned the `sky130RTLDesignAndSynthesisWorkshop` repository from GitHub, which c
 Icarus Verilog (iverilog) is an open-source Verilog simulator used to compile RTL designs and run simulations.
 ## GTKWave
 GTKWave is a waveform viewer used to analyze simulation results. It displays signal transitions from VCD (Value Change Dump) files generated during simulation.
+## GVIM
+GVim (Vim with a Graphical User Interface) is a highly configurable text editor that serves as the dominant coding environment for VLSI and RTL engineers working with Verilog and SystemVerilog
 
 Installed necessary tools using:
 ```bash
