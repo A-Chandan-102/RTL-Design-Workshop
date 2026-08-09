@@ -1,4 +1,4 @@
-# Lab 2: Working with Icarus Verilog and GTKWave
+# Lab 2: Working with Icarus Verilog, GTKWave and Gvim
 
 In this lab, I learned how to compile and simulate a Verilog design using **Icarus Verilog** and analyze the simulation results using **GTKWave**
 
@@ -40,7 +40,7 @@ This allowed me to observe the input and output signal transitions and verify th
 
 Used **GVim** to open and examine the Verilog source files and understand their structure.
 
-## Understanding the Code
+### Understanding the Code
 
 ### `good_mux.v`
 
