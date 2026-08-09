@@ -7,7 +7,6 @@ Welcome to my RTL Design Workshop repository, where I will document my journey o
 RTL-Design-Workshop/
 │
 ├── README.md
-|
 ├── Module 1/
 │   │
 │   ├── Introduction/
