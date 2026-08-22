@@ -3,14 +3,28 @@
 ## 1. Combinational Logic Optimisation
 
 ### Constant Propagation Optimisation
+For example:
 
+```verilog
+assign y = a ? 1'b0 : b;
+```
+
+If `a = 1`, the output is always:
+
+```text
+y = 0
+```
 - Identifies signals with constant values (`0` or `1`).
 - Propagates these constants through the logic to simplify the circuit.
 - Removes unnecessary logic and reduces circuit complexity.
 - Helps reduce **area and power consumption**.
 
 ### Boolean Logic Optimisation
+For example:
 
+```verilog
+assign y = a ? (b ? c : (c ? a : 1'b0)) : (!c);
+```
 - Simplifies Boolean expressions using Boolean algebra.
 - Eliminates redundant logic while maintaining the same functionality.
 - Reduces the number of gates and logic operations required.
@@ -18,7 +32,12 @@
 ---
 
 ## 2. Sequential Logic Optimisation
+For example:
 
+```verilog
+always @(posedge clk)
+    q <= 1'b0;
+```
 ### Sequential Constant Propagation *(Main Focus)*
 
 - Propagates constant values through sequential elements such as flip-flops.
