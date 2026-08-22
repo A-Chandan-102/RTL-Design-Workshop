@@ -1,5 +1,5 @@
-Combinational and Sequential Logic Optimisation
-
+## Combinational and Sequential Logic Optimisation
+- This class covered optimisation techniques used during RTL synthesis to reduce unnecessary logic and improve **area, power, and overall circuit efficiency**.
 ## 1. Combinational Logic Optimisation
 
 ### Constant Propagation Optimisation
