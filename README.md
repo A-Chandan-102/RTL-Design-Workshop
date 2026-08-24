@@ -26,7 +26,7 @@ Welcome to my RTL Design Workshop repository, where I will document my journey o
 - Develop a complete understanding of the **RTL → Simulation → Synthesis → Netlist Analysis** workflow.
 
 ## 📂 Repository Structure
-
+ 
 - 📁 **[Module 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%201)**
   - 📁 **[1Introduction/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%201/1Introduction)**
     - 📄 [iverilog flowchart.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%201/1Introduction/iverilog%20flowchart.png)
@@ -104,7 +104,80 @@ Welcome to my RTL Design Workshop repository, where I will document my journey o
     - 📄 [mult2 explanation.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%202/Lab7%20-%20Intresting%20optimisations/mult2%20explanation.png)
     - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%202/Lab7%20-%20Intresting%20optimisations/README.md)
     - 📄 [Screenshot 2026-08-09 183302.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%202/Lab7%20-%20Intresting%20optimisations/Screenshot%202026-08-09%20183302.png)
+- 📁 **[Module 3/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%203)**
+  - 📁 **[1_Introduction to Optimisation/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%203/1_Introduction%20to%20Optimisation)**
+    - 📄 [Boolean logic op.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/Boolean%20logic%20op.png)
+    - 📄 [combinational logic optimisation.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/combinational%20logic%20optimisation.png)
+    - 📄 [constant logic op.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/constant%20logic%20op.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/README.md)
+    - 📄 [sequential constant.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/sequential%20constant.png)
+    - 📄 [Sequential logic optimisation.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/Sequential%20logic%20optimisation.png)
+    - 📄 [State, cloning and retiming.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/1_Introduction%20to%20Optimisation/State%2C%20cloning%20and%20retiming.png)
+  - 📁 **[2_Optimisation/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%203/2_Optimisation)**
+    - 📄 [opt_check.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/2_Optimisation/opt_check.png)
+    - 📄 [opt_check2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/2_Optimisation/opt_check2.png)
+    - 📄 [opt_check3.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/2_Optimisation/opt_check3.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/2_Optimisation/README.md)
+  - 📁 **[3_Sequential optimisation techniques/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%203/3_Sequential%20optimisation%20techniques)**
+    - 📄 [dff_const1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/dff_const1.png)
+    - 📄 [dffconst1_dotviewer.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/dffconst1_dotviewer.png)
+    - 📄 [dffconst3.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/dffconst3.png)
+    - 📄 [dffconst3_dotviewer.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/dffconst3_dotviewer.png)
+    - 📄 [dffconst_2 dotviewer.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/dffconst_2%20dotviewer.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/3_Sequential%20optimisation%20techniques/README.md)
+  - 📁 **[4_Unused output optimisation/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%203/4_Unused%20output%20optimisation)**
+    - 📄 [Changed_counter_opt.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/4_Unused%20output%20optimisation/Changed_counter_opt.png)
+    - 📄 [combinational logic optimisation.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/4_Unused%20output%20optimisation/combinational%20logic%20optimisation.png)
+    - 📄 [constant logic op.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/4_Unused%20output%20optimisation/constant%20logic%20op.png)
+    - 📄 [counter_opt.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/4_Unused%20output%20optimisation/counter_opt.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%203/4_Unused%20output%20optimisation/README.md)
+- 📁 **[Module 4/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%204)**
+  - 📁 **[1_Intro to GLS & Synthesis simulation mismatches/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches)**
+    - 📄 [Blocking and non-blocking.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/Blocking%20and%20non-blocking.png)
+    - 📄 [caveat with blocking statements.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/caveat%20with%20blocking%20statements.png)
+    - 📄 [GLS using iverilog.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/GLS%20using%20iverilog.png)
+    - 📄 [GLS.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/GLS.png)
+    - 📄 [Missing sensitivity list.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/Missing%20sensitivity%20list.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/README.md)
+    - 📄 [Syth simulation mismatch.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/Syth%20simulation%20mismatch.png)
+    - 📄 [What we are trying to do with GLS.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/1_Intro%20to%20GLS%20%26%20Synthesis%20simulation%20mismatches/What%20we%20are%20trying%20to%20do%20with%20GLS.png)
+  - 📁 **[2_GLS | Synth sim | Mismatch LAB/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB)**
+    - 📄 [bad_mux.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/bad_mux.png)
+    - 📄 [gls_bad_mux.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/gls_bad_mux.png)
+    - 📄 [gls_ternary_op.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/gls_ternary_op.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/README.md)
+    - 📄 [synth_netlist_ternary_op.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/synth_netlist_ternary_op.png)
+    - 📄 [ternary_operator.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/2_GLS%20%7C%20Synth%20sim%20%7C%20Mismatch%20LAB/ternary_operator.png)
+  - 📁 **[3_Blocking caveat/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%204/3_Blocking%20caveat)**
+    - 📄 [blocking_caveat.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/3_Blocking%20caveat/blocking_caveat.png)
+    - 📄 [blocking_caveat_netlist.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/3_Blocking%20caveat/blocking_caveat_netlist.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/3_Blocking%20caveat/README.md)
+    - 📄 [synth_mismatch_blocking_caveat.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%204/3_Blocking%20caveat/synth_mismatch_blocking_caveat.png)
+- 📁 **[Module 5/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205)**
+  - 📁 **[1_If Case constructs/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/1_If%20Case%20constructs)**
+    - 📄 [Case statement.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/Case%20statement.png)
+    - 📄 [Dangers of case1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/Dangers%20of%20case1.png)
+    - 📄 [Dangers of case2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/Dangers%20of%20case2.png)
+    - 📄 [Dangers of if.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/Dangers%20of%20if.png)
+    - 📄 [if statement.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/if%20statement.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/1_If%20Case%20constructs/README.md)
+  - 📁 **[2_If statements/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/2_If%20statements)**
+    - 📄 [incomp_if.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/2_If%20statements/incomp_if.png)
+    - 📄 [incomp_if2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/2_If%20statements/incomp_if2.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/2_If%20statements/README.md)
+    - 📄 [synth_incomp_if.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/2_If%20statements/synth_incomp_if.png)
+    - 📄 [synth_incomp_if2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/2_If%20statements/synth_incomp_if2.png)
+  - 📁 **[3_case_statements/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/3_case_statements)**
+    - 📄 [bad_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/bad_case.png)
+    - 📄 [comp_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/comp_case.png)
+    - 📄 [gls_bad_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/gls_bad_case.png)
+    - 📄 [incomp_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/incomp_case.png)
+    - 📄 [partial_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/partial_case.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/README.md)
+    - 📄 [synth_compcase.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/synth_compcase.png)
+    - 📄 [synth_incomp_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/synth_incomp_case.png)
+  - 📁 **[4_loop constraints/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/4_loop%20constraints)**
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/4_loop%20constraints/README.md)
 - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/README.md)
-
 ---
 *Each folder above contains its own README.md with detailed notes and screenshots for that topic.*
