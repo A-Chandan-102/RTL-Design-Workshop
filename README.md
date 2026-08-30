@@ -1,32 +1,51 @@
 # RTL Design Workshop
-Welcome to my RTL Design Workshop repository, where I will document my journey of learning RTL coding, simulation, testbench development, and waveform-based debugging of digital circuits. All the data is ordered according to modules learnt
 
-## Tools Used
+Welcome to my RTL Design Workshop repository, where I document my journey of learning RTL coding, simulation, testbench development, and waveform-based debugging of digital circuits. All the data is ordered according to modules learnt.
 
-- **Verilog** – Hardware Description Language used to write RTL designs and testbenches.
-- **Icarus Verilog** – Used to compile and simulate Verilog RTL designs.
-- **GTKWave** – Used to view and analyze simulation waveforms from VCD files.
-- **GVim** – Used to edit and inspect Verilog source files and standard-cell library files.
-- **Yosys** – Used for RTL synthesis, optimization, technology mapping, and netlist generation.
-- **Sky130 Standard Cell Library** – Used for technology mapping and standard-cell characterization.
-- **Graphviz / Dot Viewer** – Used to visualize synthesized gate-level netlists.
-- **Git & GitHub** – Used for version control and documenting the learning progress.
+## 🎯 Main Objective
 
-## Main Objectives
+The goal of this workshop is to build a solid, hands-on understanding of the RTL-to-GDS front-end flow — starting from writing and simulating Verilog RTL designs, moving through logic synthesis and standard-cell mapping using the open-source **SKY130 PDK**, and finally validating designs through **Gate-Level Simulation (GLS)**. Along the way, the focus is on understanding coding-style pitfalls (blocking vs non-blocking assignments, incomplete if/case constructs), synthesis optimizations (constant propagation, cloning, retiming), and how RTL design choices translate into real synthesized hardware.
 
-- Understand the fundamentals of **RTL design and Verilog**.
-- Learn to create and use **testbenches** for RTL verification.
-- Simulate designs using **Icarus Verilog** and analyze waveforms using **GTKWave**.
-- Understand the process of **RTL synthesis** using Yosys.
-- Explore **Sky130 standard-cell libraries**, PVT conditions, cell flavours, and characteristics.
-- Understand **hierarchical and flat synthesis** and their effect on netlists.
-- Study **flip-flop synthesis**, including synchronous and asynchronous reset/set implementations.
-- Understand how synthesis tools perform **RTL optimization** to reduce hardware complexity.
-- Analyze synthesized **gate-level netlists** using Graphviz/Dot Viewer.
-- Develop a complete understanding of the **RTL → Simulation → Synthesis → Netlist Analysis** workflow.
+## 🛠️ Tools Used
+
+| Tool | Purpose |
+|---|---|
+| **Icarus Verilog (iverilog)** | RTL simulation / compiling Verilog testbenches |
+| **GTKWave** | Viewing simulation waveforms ( files) |
+| **Yosys** | Logic synthesis and standard-cell mapping |
+| **SKY130 PDK** () | Open-source standard-cell library used for synthesis |
+| **Graphviz / Yosys Dot Viewer** | Visualizing synthesized netlists ( graphs) |
+| **GVim** | Editing RTL and testbench source files |
+| **Git & GitHub** | Version control and documentation |
 
 ## 📂 Repository Structure
- 
+
+- 📁 **[Classwork 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Classwork%201)**
+  - 📄 [basic commands.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/basic%20commands.jpeg)
+  - 📄 [cloned repository.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/cloned%20repository.jpeg)
+  - 📄 [Codespaces.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/Codespaces.jpeg)
+  - 📄 [github repository.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/github%20repository.jpeg)
+  - 📄 [gtkwave.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/gtkwave.jpeg)
+  - 📄 [KLayout.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/KLayout.jpeg)
+  - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/README.md)
+  - 📄 [terminal.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/terminal.jpeg)
+- 📁 **[Classwork 2 & 3/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Classwork%202%20%26%203)**
+  - 📄 [latch layout diagram.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/latch%20layout%20diagram.jpeg)
+  - 📄 [Mux_error.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/Mux_error.jpeg)
+  - 📄 [presynth_sim.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/presynth_sim.png)
+  - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/README.md)
+  - 📄 [RV_to_DAC.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/RV_to_DAC.png)
+  - 📄 [Source files.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%202%20%26%203/Source%20files.jpeg)
+- 📁 **[Classwork 4 & 5/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Classwork%204%20%26%205)**
+  - 📄 [BABYSOC.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/BABYSOC.jpeg)
+  - 📄 [BABYSOC2.jpeg.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/BABYSOC2.jpeg.png)
+  - 📄 [babysoc_LAYOUT.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/babysoc_LAYOUT.png)
+  - 📄 [cells in good mux.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/cells%20in%20good%20mux.png)
+  - 📄 [Comparision of good_mux with and without synthesis.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/Comparision%20of%20good_mux%20with%20and%20without%20synthesis.png)
+  - 📄 [goodmux_layout.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/goodmux_layout.png)
+  - 📄 [Post_Synth_babysoc.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/Post_Synth_babysoc.png)
+  - 📄 [presynth_babysoc.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/presynth_babysoc.png)
+  - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%204%20%26%205/README.md)
 - 📁 **[Module 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%201)**
   - 📁 **[1Introduction/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%201/1Introduction)**
     - 📄 [iverilog flowchart.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%201/1Introduction/iverilog%20flowchart.png)
@@ -179,5 +198,6 @@ Welcome to my RTL Design Workshop repository, where I will document my journey o
   - 📁 **[4_loop constraints/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/4_loop%20constraints)**
     - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/4_loop%20constraints/README.md)
 - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/README.md)
+
 ---
 *Each folder above contains its own README.md with detailed notes and screenshots for that topic.*
