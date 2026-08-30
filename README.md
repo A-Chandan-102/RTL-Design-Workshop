@@ -19,7 +19,7 @@ The goal of this workshop is to build a solid, hands-on understanding of the RTL
 | **Git & GitHub** | Version control and documentation |
 
 ## 📂 Repository Structure
-*Each folder below contains its own README.md with detailed notes and screenshots for that topic.*
+*#NOTE: Each folder below contains its own README.md with detailed notes and screenshots for that topic.*
 - 📁 **[Classwork 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Classwork%201)**
   - 📄 [basic commands.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/basic%20commands.jpeg)
   - 📄 [cloned repository.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/cloned%20repository.jpeg)
