@@ -1,335 +1,294 @@
-# Cell Design Flow
+# Cell Design and Characterization
 
-## Recap: Standard-Cell Flavours
-
-A **standard-cell library** contains cells implementing different digital functions.
-
-Different sizes are provided mainly to obtain different:
-
-- Drive strengths
-- Delays
-- Area
-- Power characteristics
-- Timing performance
-
-There can also be different threshold-voltage flavours, such as:
-
-- **LVT** → Low Threshold Voltage
-- **SVT** → Standard Threshold Voltage
-- **HVT** → High Threshold Voltage
-
-Thus, a standard-cell library is essentially a collection of physical cells with different functionalities and different performance/size options.
+A **standard cell** is a pre-designed, reusable logic building block used during digital ASIC implementation. Standard-cell libraries contain cells with different functionalities and different physical sizes/flavours so that the design can be optimized for **area, power and timing**.
 
 ---
 
-# Cell Design Flow
+# 1. Standard Cell Flavours
 
-The purpose of cell design is to create a physical standard cell and generate the models/files required for using that cell in an ASIC design flow.
+The same functionality can be available in different sizes and threshold-voltage flavours.
 
-The flow can be divided into:
+### Different functionality
+
+### Different sizes
+
+### Different threshold-voltage flavours
+
+Cells can also have different threshold voltages, such as:
+
+- **LVT** → Low Threshold Voltage → Faster, higher leakage
+- **HVT** → High Threshold Voltage → Slower, lower leakage
+
+Thus, a library provides multiple choices of the same basic functionality.
+
+---
+
+# 2. Cell Design Flow
+
+The standard-cell design flow can be divided into three major sections:
 
 ```
-Inputs
-   ↓
-Design Steps
-   ↓
-Outputs
+                 CELL DESIGN FLOW
+                        │
+        ┌───────────────┼────────────────┐
+        ↓               ↓                ↓
+     INPUTS          DESIGN STEPS      OUTPUTS
 ```
 
-## 1. Inputs to Cell Design
+## Inputs
 
-The major inputs shown in the flow are the Process Design Kits (PDKs) and design specifications.
+The major inputs are:
 
-### PDK
+1. Process Design Kits (PDKs)
+2. DRC rules
+3. LVS rules
+4. SPICE device models
+5. Existing library information
+6. User-defined specifications
 
-A **Process Design Kit (PDK)** contains technology-specific information required to design and verify cells.
+The PDK provides the technology-specific information required to design and verify the cell.
 
-Important PDK contents include:
+---
 
-- DRC rules
-- LVS rules
-- SPICE models
-- Technology information
-- Layer information
-- Device information
+# 3. Design Steps
 
-### SPICE Models
-
-SPICE models describe the electrical behaviour of semiconductor devices such as:
-
-- NMOS
-- PMOS
-
-They contain device parameters required for circuit simulation.
-
-The screenshot shows model definitions containing parameters such as:
-
-- VT
-- KP
-- W
-- L
-- CJ
-- CGDO
-- CGSO
-- ...
-
-These models are used for transistor-level simulation.
-
-### Library and User-Defined Specifications
-
-The cell designer also needs:
-
-- Standard-cell library information
-- Cell functionality
-- Required drive strength
-- Timing requirements
-- Power requirements
-- Physical design constraints
-
-## 2. Design Steps
-
-The main design steps shown are:
+The main design steps are:
 
 1. Circuit Design
 2. Layout Design
 3. Characterization
 
-### Step 1 – Circuit Design
+## 3.1 Circuit Design
 
-First, the required logic function is designed at the transistor level.
+The required logic function is first implemented at transistor level.
 
-For example:
+The circuit is simulated using SPICE models to verify its electrical behaviour.
 
-```
-Logic function
-      ↓
-PMOS network
-      +
-NMOS network
-      ↓
-CMOS circuit
-```
+Important parameters include:
 
-For CMOS combinational circuits:
+- Voltage
+- Current
+- Delay
+- Power
+- Input capacitance
+- Output behaviour
 
-- PMOS network forms the pull-up network.
-- NMOS network forms the pull-down network.
+## 3.2 Layout Design
 
-The circuit must implement the required Boolean function correctly.
+The transistor-level circuit is converted into a physical layout.
 
-#### Euler's Path
+Important concepts used during layout include:
 
-During CMOS layout design, Euler's path is useful for arranging transistors to minimize diffusion breaks.
+- Euler's Path
+- Stick Diagram
+- Transistor Arrangement
+- Metal Routing
+- Contacts / Vias
 
-The PMOS and NMOS networks are represented as graphs and an Euler path is identified.
+The layout must satisfy the technology rules and should be optimized for:
 
-A suitable Euler ordering allows transistors with common diffusion to be placed next to each other.
+- Area
+- Parasitics
+- Performance
+- Power
 
-Example from the shown design:
+### Euler's Path
 
-Euler ordering:
+Euler's path is used to arrange transistors so that a continuous diffusion path can be obtained, reducing diffusion breaks and potentially reducing area.
 
-```
-A - C - E - F - D - B
-```
+### Stick Diagram
 
-The same ordering can be used to construct the physical transistor layout efficiently.
+A stick diagram is a simplified representation of the physical layout showing:
 
-#### Stick Diagram
-
-A stick diagram is a simplified representation of a layout.
-
-It represents:
-
-- Metal
+- Diffusion
 - Polysilicon
-- Diffusion
+- Metal
 - Contacts
+- VDD
+- GND
 
-without showing exact dimensions.
+It acts as an intermediate planning stage before the actual layout.
 
-It is used as an intermediate step before actual layout.
+---
 
-### Step 2 – Layout Design
+# 4. Outputs of Cell Design
 
-After designing the circuit, the transistor-level circuit is converted into a physical layout.
+The completed cell design produces several files/models:
 
-The layout contains actual geometric shapes representing:
+1. CDL
+2. GDSII
+3. LEF
+4. Extracted SPICE netlist
+5. Timing library
+6. Power library
+7. Noise library
+8. Functional information
 
-- Diffusion
-- Poly
-- Metal layers
-- Contacts
-- Vias
+## Important files
 
-The layout must satisfy the technology's DRC rules.
+**CDL**
+→ Circuit Description Language representation of the cell.
 
-Typical sequence:
+**GDSII**
+→ Complete physical layout database.
 
-```
-Circuit Design
-      ↓
-Euler Path
-      ↓
-Stick Diagram
-      ↓
-Layout
-      ↓
-DRC
-      ↓
-LVS
-```
+**LEF**
+→ Abstract physical information used during placement and routing.
 
-The final layout is therefore a manufacturable geometric representation of the circuit.
+**Extracted SPICE netlist**
+→ Netlist containing extracted parasitic information from layout.
 
-## 3. Outputs of Cell Design
+---
 
-The screenshots show the following important outputs:
+# 5. Characterization
 
-- CDL
-- GDSII
-- LEF
-- Extracted SPICE Netlist (.cir)
-- Timing Libraries
-- Noise Libraries
-- Power Libraries
-- Functionality Information
+After circuit and layout design, the cell must be characterized.
 
-### CDL
+Characterization determines how the cell behaves under different:
 
-**CDL – Circuit Description Language**
+- Input slew
+- Output load capacitance
+- Input transitions
+- Output transitions
 
-It represents the transistor-level circuit/netlist of the cell.
+The obtained data is used to generate library models for synthesis, placement, routing and timing analysis.
 
-It is useful for:
+# 6. Characterization Flow
 
-- LVS
-- Circuit verification
-- Netlist exchange
+A typical characterization setup contains:
 
-### GDSII
+1. Device SPICE models
+2. Cell netlist
+3. Input stimulus
+4. Output load
+5. Control statements
+6. SPICE simulation
+7. Extraction of timing/power/noise data
 
-GDSII is the physical layout database used to represent the geometrical layout of the cell.
+The shown characterization flow uses:
 
-It contains information about:
+Tools such as GUNA are used in the characterization process to generate library models containing:
 
-- Shapes
-- Layers
-- Coordinates
-- Physical geometry
+- Timing
+- Power
+- Noise
+- Functional information
 
-It is ultimately used in the physical design/manufacturing flow.
+---
 
-```
-Layout
-  ↓
-GDSII
-  ↓
-Physical design / fabrication flow
-```
+# 7. Timing Characterization
 
-### LEF
+Timing characterization determines the timing behaviour of a standard cell.
 
-**LEF – Library Exchange Format**
+The important timing quantities are:
 
-LEF provides the physical abstract information of a cell.
+1. Timing thresholds
+2. Propagation delay
+3. Transition time / Slew
 
-It can describe things such as:
+## 7.1 Timing Threshold Definitions
 
-- Cell dimensions
-- Pin locations
-- Pin layers
-- Routing information
-- Obstructions
-
-Physical-design tools use LEF without needing the complete detailed transistor geometry.
-
-### Extracted SPICE Netlist
-
-The layout can be extracted back into a SPICE representation.
+The following thresholds are used:
 
 ```
-Layout
-   ↓
-Extraction
-   ↓
-Extracted SPICE netlist
+slew_low_rise_thr
+slew_high_rise_thr
+slew_low_fall_thr
+slew_high_fall_thr
+
+in_rise_thr
+in_fall_thr
+
+out_rise_thr
+out_fall_thr
 ```
 
-This allows post-layout simulation, including parasitic effects.
+The slew thresholds define the beginning and end points of a signal transition.
 
-### Characterization Libraries
+---
 
-Characterization generates library information describing how the cell behaves.
+# 8. Propagation Delay
 
-The outputs include:
+Propagation delay is the time taken for a change at the input of a cell to produce the corresponding change at its output.
 
-- Timing library
-- Noise library
-- Power library
-- Functionality information
 
-These models are used during ASIC implementation and timing analysis.
+# 9. Transition Time / Slew
 
-## 4. Eight-Step Cell Characterization Flow
+Slew or transition time describes how quickly a signal changes between its low and high voltage levels.
 
-The overall characterization process can be viewed as an eight-step flow:
+### Rising Slew
 
-1. Define / prepare the transistor-level circuit
-2. Create the required SPICE simulation setup
-3. Apply input stimulus
-4. Perform circuit simulation
-5. Measure delay and transition characteristics
-6. Extract power/noise related characteristics
-7. Generate characterized library models
-8. Validate and deliver the final cell models
+$$ Rise\ Slew = time(slew\_high\_rise\_thr) - time(slew\_low\_rise\_thr) $$
 
-The essential idea is:
+### Falling Slew
+
+$$ Fall\ Slew = time(slew\_low\_fall\_thr) - time(slew\_high\_fall\_thr) $$
+
+Therefore:
+
+
+---
+
+# 10. Complete Cell Design Flow
 
 ```
-Circuit + PDK
-      ↓
-SPICE Simulation
-      ↓
-Measurements
-      ↓
-Characterization
-      ↓
-Timing / Power / Noise Models
+                  PDK
+                   ↓
+        DRC / LVS Rules
+        SPICE Models
+        Library Specifications
+                   ↓
+            Circuit Design
+                   ↓
+             Simulation
+                   ↓
+             Layout Design
+                   ↓
+       DRC / LVS Verification
+                   ↓
+          Parasitic Extraction
+                   ↓
+           Characterization
+                   ↓
+       ┌───────────┼───────────┐
+       ↓           ↓           ↓
+    Timing       Power        Noise
+       ↓           ↓           ↓
+              Standard Cell
+                 Library
+                   ↓
+       Synthesis / Placement /
+         Routing / STA
 ```
 
 ---
 
-# GUNA
+# 11. Key Points
 
-## What is GUNA?
+1. Standard cells are reusable physical logic building blocks.
 
-GUNA is a cell-characterization tool used to characterize standard cells.
+2. A library contains multiple functionalities such as AND, OR, BUF, INV, DFF, LATCH and ICG.
 
-It takes the cell description, simulation information and required characterization conditions and generates the library models needed for digital implementation.
+3. The same functionality can have different sizes and threshold-voltage flavours.
 
----
+4. Cell design consists mainly of: Circuit design → Layout design → Characterization.
 
-# Key Points to Remember
+5. PDKs provide technology-specific rules, models and data.
 
-1. Standard-cell libraries contain cells of different functionality and different physical/performance sizes.
+6. Euler's path and stick diagrams help in layout planning.
 
-2. PDK provides technology information such as DRC/LVS rules and SPICE models.
+7. Major cell-design outputs include CDL, GDSII, LEF and extracted SPICE netlists.
 
-3. Cell design has three major stages: Circuit design → Layout design → Characterization.
+8. Characterization generates timing, power, noise and functional library information.
 
-4. Euler's path helps arrange transistors and reduce diffusion breaks.
+9. Timing characterization uses threshold definitions, propagation delay and transition time.
 
-5. Stick diagrams are simplified representations used before creating the actual layout.
+10. Propagation delay:
 
-6. DRC checks whether the layout follows manufacturing rules.
+    $$ delay = output\ threshold\ time - input\ threshold\ time $$
 
-7. LVS checks whether the layout matches the intended circuit.
+11. Slew / transition time measures how quickly a signal rises or falls.
 
-8. Characterization determines timing, power, noise and functional behaviour of the cell.
+12. Delay and slew depend on input slew and output load.
 
-9. Major cell-design outputs include: CDL, GDSII, LEF and extracted SPICE netlist.
-
-10. Timing, power and noise libraries are generated from characterization results.
-
-11. GUNA is the characterization tool used to generate these standard-cell library models.
+13. The characterized library is later used by synthesis, placement, routing and STA tools.
