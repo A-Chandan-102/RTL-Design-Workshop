@@ -1,25 +1,49 @@
-# RTL Design Workshop
+# RTL Design and Physical Design Workshop
 
-Welcome to my RTL Design Workshop repository, where I document my journey of learning RTL coding, simulation, testbench development, and waveform-based debugging of digital circuits. All the data is ordered according to modules learnt.
+Welcome to my RTL Design and Physical Design Workshop repository, where I document my journey of learning RTL coding, simulation, testbench development, waveform-based debugging, logic synthesis, and full RTL-to-GDSII physical implementation of digital circuits. All the data is ordered according to modules learnt.
 
 ## 🎯 Main Objective
 
-The goal of this workshop is to build a solid, hands-on understanding of the RTL-to-GDS front-end flow — starting from writing and simulating Verilog RTL designs, moving through logic synthesis and standard-cell mapping using the open-source **SKY130 PDK**, and finally validating designs through **Gate-Level Simulation (GLS)**. Along the way, the focus is on understanding coding-style pitfalls (blocking vs non-blocking assignments, incomplete if/case constructs), synthesis optimizations (constant propagation, cloning, retiming), and how RTL design choices translate into real synthesized hardware.
+The goal of this workshop is to build a solid, hands-on understanding of the complete **RTL-to-GDSII front-end and back-end flow**:
+
+- **RTL Design (Modules 1–5, Classwork 1–5, Assessment 1):** writing and simulating Verilog RTL designs, moving through logic synthesis and standard-cell mapping using the open-source **SKY130 PDK**, and validating designs through **Gate-Level Simulation (GLS)**. Along the way, the focus is on understanding coding-style pitfalls (blocking vs non-blocking assignments, incomplete if/case constructs), synthesis optimizations (constant propagation, cloning, retiming), and how RTL design choices translate into real synthesized hardware.
+- **Physical Design (Modules 6–9):** taking a synthesized netlist through the **OpenLane** RTL-to-GDSII flow — floorplanning, power planning, placement, and standard-cell design — plus the fundamentals of **CMOS fabrication**, SPICE-based **CMOS inverter characterization**, custom standard-cell layout in **Magic**, LEF/timing-library generation, and pre-layout timing analysis and clock-tree concepts.
 
 ## 🛠️ Tools Used
 
 | Tool | Purpose |
 |---|---|
 | **Icarus Verilog (iverilog)** | RTL simulation / compiling Verilog testbenches |
-| **GTKWave** | Viewing simulation waveforms ( files) |
+| **GTKWave** | Viewing simulation waveforms |
 | **Yosys** | Logic synthesis and standard-cell mapping |
-| **SKY130 PDK** () | Open-source standard-cell library used for synthesis |
-| **Graphviz / Yosys Dot Viewer** | Visualizing synthesized netlists ( graphs) |
-| **GVim** | Editing RTL and testbench source files |
+| **SKY130 PDK** | Open-source standard-cell library used for synthesis and physical design |
+| **Graphviz / Yosys Dot Viewer** | Visualizing synthesized netlists |
+| **OpenLane** | Automated RTL-to-GDSII physical design flow (floorplanning, placement, routing) |
+| **Magic** | VLSI layout editor — custom standard-cell layout, LEF generation, DRC |
+| **ngspice** | SPICE simulation for CMOS inverter and standard-cell characterization |
+| **KLayout** | Viewing and inspecting chip layouts |
+| **GVim** | Editing RTL, testbench, and script source files |
 | **Git & GitHub** | Version control and documentation |
 
 ## 📂 Repository Structure
 *#NOTE: Each folder below contains its own README.md with detailed notes and screenshots for that topic.*
+
+This repository is organized into two parts:
+- **Part 1 – RTL Design:** `Assesment 1`, `Classwork 1`–`5`, and `Module 1`–`5`
+- **Part 2 – Physical Design:** `Module 6`–`9`
+
+
+## Part 1 – RTL Design 🧩
+*(`Assesment 1`, `Classwork 1`–`5`, `Module 1`–`5`)*
+
+- 📁 **[Assesment 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Assesment%201)**
+  - 📄 [Assesment_abc.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesment_abc.png)
+  - 📄 [Assesment_gates used.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesment_gates%20used.png)
+  - 📄 [Assesment_output_waveform.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesment_output_waveform.png)
+  - 📄 [Assesment_stat.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesment_stat.png)
+  - 📄 [Assesments_gls.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesments_gls.png)
+  - 📄 [Assesments_netlist.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/Assesments_netlist.png)
+  - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Assesment%201/README.md)
 - 📁 **[Classwork 1/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Classwork%201)**
   - 📄 [basic commands.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/basic%20commands.jpeg)
   - 📄 [cloned repository.jpeg](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Classwork%201/cloned%20repository.jpeg)
@@ -197,7 +221,134 @@ The goal of this workshop is to build a solid, hands-on understanding of the RTL
     - 📄 [synth_incomp_case.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/3_case_statements/synth_incomp_case.png)
   - 📁 **[4_loop constraints/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%205/4_loop%20constraints)**
     - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%205/4_loop%20constraints/README.md)
-- 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/README.md)
+
+## Part 2 – Physical Design 🏗️
+*(`Module 6`–`9`)*
+
+- 📁 **[Module 6/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%206)**
+  - 📁 **[1_How to talk to computers/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%206/1_How%20to%20talk%20to%20computers)**
+    - 📄 [3 steps.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/3%20steps.png)
+    - 📄 [Foundaries and Macros.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/Foundaries%20and%20Macros.png)
+    - 📄 [Into to RISC-V architecture.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/Into%20to%20RISC-V%20architecture.png)
+    - 📄 [intro to chip layout.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/intro%20to%20chip%20layout.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/README.md)
+    - 📄 [software to hardware.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/1_How%20to%20talk%20to%20computers/software%20to%20hardware.png)
+  - 📁 **[2_SoC design and Openlane/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%206/2_SoC%20design%20and%20Openlane)**
+    - 📄 [eda tools.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/eda%20tools.png)
+    - 📄 [Intro to openlane.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/Intro%20to%20openlane.png)
+    - 📄 [Intro to soc design using openlane.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/Intro%20to%20soc%20design%20using%20openlane.png)
+    - 📄 [Open sourse history.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/Open%20sourse%20history.png)
+    - 📄 [openlane asic flow.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/openlane%20asic%20flow.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/README.md)
+    - 📄 [simplified rtl to gdsii flow.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/2_SoC%20design%20and%20Openlane/simplified%20rtl%20to%20gdsii%20flow.png)
+  - 📁 **[3_Lab- Getting to know Openlane/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane)**
+    - 📄 [Config file.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Config%20file.png)
+    - 📄 [Invoking Openlane.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Invoking%20Openlane.png)
+    - 📄 [less config.tcl.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/less%20config.tcl.png)
+    - 📄 [Merged_lef.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Merged_lef.png)
+    - 📄 [Merging LEFS.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Merging%20LEFS.png)
+    - 📄 [Netlist.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Netlist.png)
+    - 📄 [Openlane design files.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Openlane%20design%20files.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/README.md)
+    - 📄 [Report.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Report.png)
+    - 📄 [Synthesised.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%206/3_Lab-%20Getting%20to%20know%20Openlane/Synthesised.png)
+- 📁 **[Module 7/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%207)**
+  - 📁 **[1_Chip Floor Planning/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%207/1_Chip%20Floor%20Planning)**
+    - 📄 [Black boxes.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Black%20boxes.png)
+    - 📄 [Checking layers.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Checking%20layers.png)
+    - 📄 [Core and Die.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Core%20and%20Die.png)
+    - 📄 [Decoupling capacitor.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Decoupling%20capacitor.png)
+    - 📄 [Floorplan def file.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Floorplan%20def%20file.png)
+    - 📄 [ioPlace log.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/ioPlace%20log.png)
+    - 📄 [layout.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/layout.png)
+    - 📄 [Pin_Placement.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Pin_Placement.png)
+    - 📄 [Powerplanning.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Powerplanning.png)
+    - 📄 [Powerplanning2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Powerplanning2.png)
+    - 📄 [Preplaces cells.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Preplaces%20cells.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/README.md)
+    - 📄 [Sky130 config file.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Sky130%20config%20file.png)
+    - 📄 [Utilisation ratio and ascpect ration.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Utilisation%20ratio%20and%20ascpect%20ration.png)
+    - 📄 [Variables for floorplanning.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Variables%20for%20floorplanning.png)
+    - 📄 [Variables for synthesis.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Variables%20for%20synthesis.png)
+    - 📄 [Width and length.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/1_Chip%20Floor%20Planning/Width%20and%20length.png)
+  - 📁 **[2_Library binding and Placement/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%207/2_Library%20binding%20and%20Placement)**
+    - 📄 [Checking layers.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Checking%20layers.png)
+    - 📄 [Example circuit.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Example%20circuit.png)
+    - 📄 [Flavours of shapes.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Flavours%20of%20shapes.png)
+    - 📄 [layout.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/layout.png)
+    - 📄 [Layout_floorplan.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Layout_floorplan.png)
+    - 📄 [Optimizing placement with buffers.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Optimizing%20placement%20with%20buffers.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/README.md)
+    - 📄 [Steps of logic synthesis.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/Steps%20of%20logic%20synthesis.png)
+    - 📄 [tkcon 2.3 Main.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/2_Library%20binding%20and%20Placement/tkcon%202.3%20Main.png)
+  - 📁 **[3_4_Cell design flow and Timing charecterisation/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation)**
+    - 📄 [8 steps.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/8%20steps.png)
+    - 📄 [Cel design flow inputs.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Cel%20design%20flow%20inputs.png)
+    - 📄 [cell design recap.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/cell%20design%20recap.png)
+    - 📄 [design steps and outputs.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/design%20steps%20and%20outputs.png)
+    - 📄 [Guna.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Guna.png)
+    - 📄 [Layout with stick diagram.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Layout%20with%20stick%20diagram.png)
+    - 📄 [Outputs.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Outputs.png)
+    - 📄 [Propogation delay.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Propogation%20delay.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/README.md)
+    - 📄 [Timing threshold definitions.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/Timing%20threshold%20definitions.png)
+    - 📄 [transition time.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%207/3_4_Cell%20design%20flow%20and%20Timing%20charecterisation/transition%20time.png)
+- 📁 **[Module 8/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%208)**
+  - 📁 **[1_Cmos inverter/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%208/1_Cmos%20inverter)**
+    - 📄 [equidistant pins.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/equidistant%20pins.png)
+    - 📄 [inverter layout.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/inverter%20layout.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/README.md)
+    - 📄 [spice deck creation 1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/spice%20deck%20creation%201.png)
+    - 📄 [Spice deck2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/Spice%20deck2.png)
+    - 📄 [spice wave form.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/spice%20wave%20form.png)
+    - 📄 [Stacked pins.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/Stacked%20pins.png)
+    - 📄 [static and dynamic .png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/static%20and%20dynamic%20.png)
+    - 📄 [switching threshhold.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/switching%20threshhold.png)
+    - 📄 [technological paramenters of cmos.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/technological%20paramenters%20of%20cmos.png)
+    - 📄 [waveforms compasision.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/1_Cmos%20inverter/waveforms%20compasision.png)
+  - 📁 **[2_CMOS fabrication/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%208/2_CMOS%20fabrication)**
+    - 📄 [box dimentions.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/box%20dimentions.png)
+    - 📄 [Checking type of layer and extracting.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Checking%20type%20of%20layer%20and%20extracting.png)
+    - 📄 [CMOS done.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/CMOS%20done.png)
+    - 📄 [CMOS Inverter layers.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/CMOS%20Inverter%20layers.png)
+    - 📄 [Cmosfab1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab1.png)
+    - 📄 [Cmosfab2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab2.png)
+    - 📄 [Cmosfab3.2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab3.2.png)
+    - 📄 [Cmosfab3.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab3.png)
+    - 📄 [Cmosfab4.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab4.png)
+    - 📄 [Cmosfab5.2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab5.2.png)
+    - 📄 [Cmosfab5.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab5.png)
+    - 📄 [Cmosfab6.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab6.png)
+    - 📄 [Cmosfab7.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab7.png)
+    - 📄 [Cmosfab8.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/Cmosfab8.png)
+    - 📄 [layers labelling.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/layers%20labelling.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/README.md)
+    - 📄 [technological paramenters of cmos.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/2_CMOS%20fabrication/technological%20paramenters%20of%20cmos.png)
+  - 📁 **[3_Tech file labs/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%208/3_Tech%20file%20labs)**
+    - 📄 [charecterising cell.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/charecterising%20cell.png)
+    - 📄 [charecterising cell2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/charecterising%20cell2.png)
+    - 📄 [exersise 1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/exersise%201.png)
+    - 📄 [exersise 2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/exersise%202.png)
+    - 📄 [final spice deck.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/final%20spice%20deck.png)
+    - 📄 [final spice deck2.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/final%20spice%20deck2.png)
+    - 📄 [implementing poly resistor spacing.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/implementing%20poly%20resistor%20spacing.png)
+    - 📄 [incorrect rule.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/incorrect%20rule.png)
+    - 📄 [indtroduction to sky130 pdks.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/indtroduction%20to%20sky130%20pdks.png)
+    - 📄 [Magic tool option and drc rules.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/Magic%20tool%20option%20and%20drc%20rules.png)
+    - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/README.md)
+    - 📄 [Using simple tools.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%208/3_Tech%20file%20labs/Using%20simple%20tools.png)
+- 📁 **[Module 9/](https://github.com/A-Chandan-102/RTL-Design-Workshop/tree/main/Module%209)**
+  - 📄 [CMOS done.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/CMOS%20done.png)
+  - 📄 [Defining ports.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/Defining%20ports.png)
+  - 📄 [delay tables.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/delay%20tables.png)
+  - 📄 [delay tables_1.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/delay%20tables_1.png)
+  - 📄 [grids.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/grids.png)
+  - 📄 [important commands.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/important%20commands.png)
+  - 📄 [lef file.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/lef%20file.png)
+  - 📄 [library of all cells.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/library%20of%20all%20cells.png)
+  - 📄 [openlane.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/openlane.png)
+  - 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/README.md)
+  - 📄 [tracks.png](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/Module%209/tracks.png)
 
 ---
-
+- 📄 [README.md](https://github.com/A-Chandan-102/RTL-Design-Workshop/blob/main/README.md)
